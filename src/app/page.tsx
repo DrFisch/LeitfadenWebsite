@@ -3,7 +3,7 @@ import Features from '../components/Features';
 
 export default function HomePage() {
   return (
-    <main className="bg-gray-100 text-gray-900">
+    <main className="bg-inherit text-gray-900">
       {/* Hero Section */}
       <Hero />
 
