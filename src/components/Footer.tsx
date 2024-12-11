@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-700 text-gray-300 py-4 rounded-t-md">
+    <footer className="bg-gray-700 text-gray-300 py-4 rounded-t-xl">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo auf der linken Seite */}
         <div className="flex items-center space-x-3">
