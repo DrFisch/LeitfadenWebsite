@@ -1,35 +1,57 @@
 import Link from 'next/link';
 
-export default function Hero() {
+interface HeroProps {
+  title: string;
+  description: string;
+  backgroundImage: string;
+  buttons: { text: string; href: string; style: string }[];
+  overlayOpacity?: number; // Opazität für das Blurry Overlay
+  boxOpacity?: number; // Opazität für die Blurry Box
+}
+
+export default function Hero({
+  title,
+  description,
+  backgroundImage,
+  buttons,
+  overlayOpacity = 1, // Standardwert für Overlay-Opazität
+  boxOpacity = 4, // Standardwert für Box-Opazität
+}: HeroProps) {
   return (
     <section
       className="relative bg-cover text-white py-20"
-      style={{ backgroundImage: "url('/wp2.jpg')" }}
+      style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-{/* Blurry Overlay */}
-<div className="absolute inset-0 z-10 backdrop-blur-sm bg-white/1"></div>
+      {/* Blurry Overlay */}
+      <div
+        className={`absolute inset-0 z-10 ${overlayOpacity > 0 ? 'backdrop-blur-sm' : ''}`}        style={
+          overlayOpacity > 0
+            ? { backgroundColor: `rgba(255, 255, 255, ${overlayOpacity / 1000})` }
+            : undefined
+        }
+      ></div>
 
       <div className="container mx-auto text-center relative">
         {/* Blurry Box */}
-        <div className="relative z-10 backdrop-blur-sm bg-white/4 rounded-lg p-8">
-          <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">
-            Leitfaden zur Linux-Migration
-          </h1>
-          <p className="text-lg mb-8 drop-shadow-md">
-            Willkommen! Diese Website dient als Leitfaden für Behörden, um die Migration von Windows auf Linux effizient
-            und erfolgreich umzusetzen.
-          </p>
+        <div
+          className={`relative z-10 rounded-lg p-8 ${boxOpacity > 0 ? 'backdrop-blur-sm' : ''}`}          style={
+            boxOpacity > 0
+              ? { backgroundColor: `rgba(255, 255, 255, ${boxOpacity / 1000})` }
+              : undefined
+          }
+        >
+          <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">{title}</h1>
+          <p className="text-lg mb-8 drop-shadow-md">{description}</p>
           <div className="space-x-4">
-            <Link href="/decision-making">
-              <button className="bg-blue-500  px-6 py-3 rounded-md shadow-lg hover:bg-blue-600 transition">
-                Entscheidungshilfe
-              </button>
-            </Link>
-            <Link href="/migration-guide">
-              <button className="bg-blue-700  px-6 py-3 rounded-md shadow-lg hover:bg-blue-900 transition">
-                Zum Leitfaden
-              </button>
-            </Link>
+            {buttons.map((button, index) => (
+              <Link key={index} href={button.href}>
+                <button
+                  className={`${button.style} px-6 py-3 rounded-md shadow-lg transition`}
+                >
+                  {button.text}
+                </button>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

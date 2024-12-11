@@ -1,29 +1,47 @@
+'use client';
+
+import ModuleDescription from '@/components/decision-making/Features';
+import Hero from '@/components/Hero';
 import Link from 'next/link';
 
-export default function DecisionMaking() {
+export default function DecisionMakingPage() {
   return (
-    <main className=" text-gray-900 min-h-[81vh] py-12">
-      <section className="container mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-6">Entscheidungsfindung</h1>
-        <p className="text-lg mb-8">
-          Willkommen auf der Entscheidungsfindungs-Seite! Hier erhalten Sie Unterstützung bei der Beurteilung, ob eine Migration auf Linux für Ihre Behörde sinnvoll ist. 
-          Sie können sich zunächst mit den theoretischen Grundlagen vertraut machen oder direkt den interaktiven Fragebogen ausfüllen.
-        </p>
-        <div className="space-x-6">
-          {/* Button zur Theorie */}
-          <Link href="/decision-making/theory">
-            <button className="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">
-              Theorie anzeigen
-            </button>
-          </Link>
-          {/* Button zum Fragebogen */}
-          <Link href="/decision-making/quiz">
-            <button className="bg-green-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-green-600 transition">
-              Zum Fragebogen
-            </button>
-          </Link>
-        </div>
-      </section>
-    </main>
+    <>
+      {/* Hero Section */}
+      <Hero
+        title="Entscheidungsfindung zur Linux-Migration"
+        description="Finden Sie heraus, ob Ihre Behörde bereit ist, auf Linux zu migrieren, und welche Vorteile dies bietet."
+        backgroundImage="/decision-making-bg.png"
+        buttons={[
+          { text: 'Theorie lesen', href: '/decision-making/theory', style: 'bg-green-500 hover:bg-green-600' },
+          { text: 'Fragebogen starten', href: '/decision-making/quiz', style: 'bg-indigo-500 hover:bg-indigo-600' },
+        ]}
+        overlayOpacity={1} 
+        boxOpacity={0} 
+      />
+
+<ModuleDescription
+        title="Modulbeschreibung"
+        description="Dieses Modul unterstützt Behörden dabei, eine fundierte Entscheidung über die Migration auf Linux zu treffen. Es umfasst eine detaillierte theoretische Einführung sowie einen interaktiven Fragebogen, um individuelle Gegebenheiten zu bewerten."
+        modules={[
+          {
+            title: 'Theorie',
+            description:
+              'Lesen Sie die theoretischen Grundlagen und bewerten Sie Machbarkeit, Nutzen und Risiken der Migration.',
+            href: '/decision-making/theory',
+            buttonLabel: 'Theorie lesen',
+            buttonStyle: 'bg-green-500 hover:bg-blue-600',
+          },
+          {
+            title: 'Fragebogen',
+            description:
+              'Beantworten Sie unseren interaktiven Fragebogen, um zu sehen, ob eine Migration für Ihre Behörde geeignet ist.',
+            href: '/decision-making/quiz',
+            buttonLabel: 'Fragebogen starten',
+            buttonStyle: 'bg-blue-500 hover:bg-green-600',
+          },
+        ]}
+      />
+    </>
   );
 }
