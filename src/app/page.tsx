@@ -8,11 +8,13 @@ export default function HomePage() {
       <Hero
         title="Leitfaden zur Linux-Migration"
         description="Willkommen! Diese Website dient als Leitfaden für Behörden, um die Migration von Windows auf Linux effizient und erfolgreich umzusetzen."
-        backgroundImage="/wp2.jpg"
+        backgroundImage="/home-bg.png"
         buttons={[
           { text: 'Entscheidungshilfe', href: '/decision-making', style: 'bg-blue-500 hover:bg-blue-600' },
           { text: 'Zum Leitfaden', href: '/migration-guide', style: 'bg-blue-700 hover:bg-blue-900' },
         ]}
+        overlayOpacity={1} 
+        boxOpacity={0} 
       />
 
       <Features />

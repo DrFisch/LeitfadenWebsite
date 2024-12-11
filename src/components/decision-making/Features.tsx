@@ -27,7 +27,8 @@ export default function ModuleDescription({
         {modules.map((module, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-lg shadow-lg text-center"
+            className="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:bg-indigo-100"
+
           >
             <h3 className="text-xl font-bold mb-4">{module.title}</h3>
             <p className="text-gray-600 mb-6">{module.description}</p>

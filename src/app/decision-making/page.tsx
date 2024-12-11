@@ -30,7 +30,7 @@ export default function DecisionMakingPage() {
               'Lesen Sie die theoretischen Grundlagen und bewerten Sie Machbarkeit, Nutzen und Risiken der Migration.',
             href: '/decision-making/theory',
             buttonLabel: 'Theorie lesen',
-            buttonStyle: 'bg-green-500 hover:bg-blue-600',
+            buttonStyle: 'bg-green-500 hover:bg-blue-600 hidden', // Hidden button
           },
           {
             title: 'Fragebogen',
@@ -38,7 +38,7 @@ export default function DecisionMakingPage() {
               'Beantworten Sie unseren interaktiven Fragebogen, um zu sehen, ob eine Migration für Ihre Behörde geeignet ist.',
             href: '/decision-making/quiz',
             buttonLabel: 'Fragebogen starten',
-            buttonStyle: 'bg-blue-500 hover:bg-green-600',
+            buttonStyle: 'bg-blue-500 hover:bg-green-600 hidden', //hidden button
           },
         ]}
       />

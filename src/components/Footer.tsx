@@ -9,9 +9,9 @@ export default function Footer() {
           <Image
             src="/haw2.png" // Pfad zu deinem Logo
             alt="Logo"
-            width={100} // Größe des Logos
+            width={80} // Größe des Logos
             height={40}
-            className="w-22 h-19"
+            className="w-19 h-15"
           />
         </div>
         {/* Copyright auf der rechten Seite */}
