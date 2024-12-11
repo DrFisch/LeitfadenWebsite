@@ -17,7 +17,7 @@ export default function Navbar() {
   const pathname = usePathname(); // Aktueller Pfad
 
   return (
-    <nav className="bg-gradient-to-r from-sky-500 to-blue-900 shadow-md">
+    <nav className="bg-gradient-to-r from-sky-500 to-blue-900 shadow-md ">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-6">
         {/* Logo und Titel */}
         <div className="flex items-center ">
@@ -25,8 +25,8 @@ export default function Navbar() {
             <Image
               src="/haw2.png" // Pfad zum Logo
               alt="Logo"
-              width={110} // Breite des Logos
-              height={110} // Höhe des Logos
+              width={100} // Breite des Logos
+              height={100} // Höhe des Logos
               className="rounded-full"
             />
           </a>
@@ -43,8 +43,8 @@ export default function Navbar() {
               href={item.href}
               className={`text-sm font-semibold px-2 py-1 rounded-md transition-all ${
                 pathname === item.href
-                  ? 'text-white bg-indigo-900'
-                  : 'text-white hover:text-white hover:bg-indigo-600'
+                  ? 'text-white bg-indigo-800'
+                  : 'text-white hover:text-white hover:bg-indigo-600 '
               }`}
             >
               {item.name}
