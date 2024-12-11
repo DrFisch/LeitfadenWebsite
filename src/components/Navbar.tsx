@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const navigation = [
   { name: 'Entscheidungsfindung', href: '/decision-making' },
@@ -18,9 +19,23 @@ export default function Navbar() {
   return (
     <nav className="bg-gradient-to-r from-sky-500 to-blue-900 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-6">
-        <a href="/" className="text-xl font-bold text-black">
-          Leitfaden
-        </a>
+        {/* Logo und Titel */}
+        <div className="flex items-center ">
+          <a href="/">
+            <Image
+              src="/haw2.png" // Pfad zum Logo
+              alt="Logo"
+              width={110} // Breite des Logos
+              height={110} // Höhe des Logos
+              className="rounded-full"
+            />
+          </a>
+          <a href="/" className="text-2xl font-bold text-white">
+            Linux Migration Leitfaden
+          </a>
+        </div>
+
+        {/* Navigation Links */}
         <div className="hidden lg:flex gap-x-6">
           {navigation.map((item) => (
             <a
@@ -36,13 +51,17 @@ export default function Navbar() {
             </a>
           ))}
         </div>
+
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-gray-700"
+          className="lg:hidden text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
         </button>
       </div>
+
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-lg">
           {navigation.map((item) => (
