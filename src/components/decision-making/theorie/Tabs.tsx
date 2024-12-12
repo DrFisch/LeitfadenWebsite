@@ -58,35 +58,72 @@ export default function Tabs({ items }: TabsProps) {
 
               {/* Subsections */}
               {item.subSections.map((subSection) => (
-                <div key={subSection.id} className="bg-white p-4 rounded-lg shadow-md mb-4">
-                  <h4 className="text-md font-semibold text-gray-800 mb-2">{subSection.title}</h4>
-                  <ul className="list-disc list-inside text-gray-700 mb-2">
-                    <li>
-                      <span className="font-semibold text-blue-600">Migration sinnvoll wenn:</span>
-                      <ul className="list-disc list-inside ml-5">
-                        {subSection.factorsFor.map((factor, index) => (
-                          <li key={index}>{factor}</li>
-                        ))}
-                      </ul>
-                    </li>
-                    <li>
-                      <span className="font-semibold text-red-600">Migration weniger sinnvoll wenn:</span>
-                      <ul className="list-disc list-inside ml-5">
-                        {subSection.factorsAgainst.map((factor, index) => (
-                          <li key={index}>{factor}</li>
-                        ))}
-                      </ul>
-                    </li>
-                    <li>
-                      <span className="font-semibold text-green-600">Verbesserungen durch Migration:</span>
-                      <ul className="list-disc list-inside ml-5">
-                        {subSection.improvements.map((improvement, index) => (
-                          <li key={index}>{improvement}</li>
-                        ))}
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+                <div key={subSection.id} className="bg-white p-6 rounded-lg shadow-lg mb-6">
+                {/* Titel der Subsection */}
+                <h4 className="text-lg font-bold text-gray-800 flex items-center mb-4">
+                  {/* Optionales Icon */}
+                  <svg
+                    className="w-6 h-6 text-blue-500 mr-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-6-15.53"
+                    />
+                  </svg>
+                  {subSection.title}
+                </h4>
+              
+                {/* Content als Tabelle */}
+                <table className="table-auto w-full text-left text-gray-700 border-collapse">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="p-3 border-b font-semibold text-blue-600">Aspekt</th>
+                      <th className="p-3 border-b font-semibold text-gray-800">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* Faktoren für Migration */}
+                    <tr className="hover:bg-blue-50">
+                      <td className="p-3 border-b text-blue-600">Migration sinnvoll wenn</td>
+                      <td className="p-3 border-b">
+                        <ul className="list-disc list-inside">
+                          {subSection.factorsFor.map((factor, index) => (
+                            <li key={index} className="mb-1">{factor}</li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                    {/* Faktoren gegen Migration */}
+                    <tr className="hover:bg-red-50">
+                      <td className="p-3 border-b text-red-600">Migration weniger sinnvoll wenn</td>
+                      <td className="p-3 border-b">
+                        <ul className="list-disc list-inside">
+                          {subSection.factorsAgainst.map((factor, index) => (
+                            <li key={index} className="mb-1">{factor}</li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                    {/* Verbesserungen */}
+                    <tr className="hover:bg-green-50">
+                      <td className="p-3 text-green-600">Verbesserungen durch Migration</td>
+                      <td className="p-3">
+                        <ul className="list-disc list-inside">
+                          {subSection.improvements.map((improvement, index) => (
+                            <li key={index} className="mb-1">{improvement}</li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               ))}
             </div>
           ))}
