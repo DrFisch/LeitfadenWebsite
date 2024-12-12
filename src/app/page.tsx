@@ -13,7 +13,7 @@ export default function HomePage() {
           { text: 'Entscheidungshilfe', href: '/decision-making', style: 'bg-blue-500 hover:bg-blue-600 hidden' },
           { text: 'Zum Leitfaden', href: '/migration-guide', style: 'bg-blue-700 hover:bg-blue-900 hidden' },
         ]}
-        overlayOpacity={20} 
+        overlayOpacity={40} 
         boxOpacity={0} 
       />
 
