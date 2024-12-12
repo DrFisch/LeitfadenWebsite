@@ -7,6 +7,7 @@ interface HeroProps {
   buttons: { text: string; href: string; style: string }[];
   overlayOpacity?: number; // Opazität für das Blurry Overlay
   boxOpacity?: number; // Opazität für die Blurry Box
+  small?: boolean; // Neue Prop für kleinere Hero-Section
 }
 
 export default function Hero({
@@ -16,17 +17,21 @@ export default function Hero({
   buttons,
   overlayOpacity = 1, // Standardwert für Overlay-Opazität
   boxOpacity = 4, // Standardwert für Box-Opazität
+  small = false, // Standardwert: Nicht klein
 }: HeroProps) {
   return (
     <section
-      className="relative bg-cover text-white py-20"
+      className={`relative bg-cover text-white ${
+        small ? 'pt-20 pb-10' : 'py-20'
+      }`} // Dynamische Höhe
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Blurry Overlay */}
       <div
-        className={`absolute inset-0 z-10 ${overlayOpacity > 0 ? 'backdrop-blur-sm' : ''}`}        style={
+        className={`absolute inset-0 z-10 ${overlayOpacity > 0 ? 'backdrop-blur-sm' : ''}`}
+        style={
           overlayOpacity > 0
-            ? { backgroundColor: `rgba(255, 255, 255, ${overlayOpacity / 1000})` }
+            ? { backgroundColor: `rgba(0,0,0, ${overlayOpacity / 100})` }
             : undefined
         }
       ></div>
@@ -34,14 +39,29 @@ export default function Hero({
       <div className="container mx-auto text-center relative">
         {/* Blurry Box */}
         <div
-          className={`relative z-10 rounded-lg p-8 ${boxOpacity > 0 ? 'backdrop-blur-sm' : ''}`}          style={
+          className={`relative z-10 rounded-lg ${
+            small ? 'p-8' : 'p-8'
+          } ${boxOpacity > 0 ? 'backdrop-blur-sm' : ''}`} // Dynamische Padding
+          style={
             boxOpacity > 0
               ? { backgroundColor: `rgba(255, 255, 255, ${boxOpacity / 1000})` }
               : undefined
           }
         >
-          <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">{title}</h1>
-          <p className="text-lg mb-8 drop-shadow-md">{description}</p>
+          <h1
+            className={`${
+              small ? 'text-3xl' : 'text-5xl'
+            } font-bold mb-6 drop-shadow-lg`} // Dynamische Schriftgröße
+          >
+            {title}
+          </h1>
+          <p
+            className={`${
+              small ? 'text-lg' : 'text-lg'
+            } mb-8 drop-shadow-md`} // Dynamische Beschreibung
+          >
+            {description}
+          </p>
           <div className="space-x-4">
             {buttons.map((button, index) => (
               <Link key={index} href={button.href}>

@@ -10,10 +10,10 @@ export default function HomePage() {
         description="Willkommen! Diese Website dient als Leitfaden für Behörden, um die Migration von Windows auf Linux effizient und erfolgreich umzusetzen."
         backgroundImage="/home-bg.png"
         buttons={[
-          { text: 'Entscheidungshilfe', href: '/decision-making', style: 'bg-blue-500 hover:bg-blue-600' },
-          { text: 'Zum Leitfaden', href: '/migration-guide', style: 'bg-blue-700 hover:bg-blue-900' },
+          { text: 'Entscheidungshilfe', href: '/decision-making', style: 'bg-blue-500 hover:bg-blue-600 hidden' },
+          { text: 'Zum Leitfaden', href: '/migration-guide', style: 'bg-blue-700 hover:bg-blue-900 hidden' },
         ]}
-        overlayOpacity={1} 
+        overlayOpacity={20} 
         boxOpacity={0} 
       />
 

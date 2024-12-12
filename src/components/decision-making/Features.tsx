@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+
 interface ModuleDescriptionProps {
   title: string;
   description: string;
@@ -9,6 +10,7 @@ interface ModuleDescriptionProps {
     href: string;
     buttonLabel: string;
     buttonStyle: string;
+    icon: React.ElementType; // Icon-Komponente
   }[];
 }
 
@@ -28,8 +30,8 @@ export default function ModuleDescription({
           <div
             key={index}
             className="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:bg-indigo-100"
-
           >
+            <module.icon className="h-12 w-12 text-indigo-500 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-4">{module.title}</h3>
             <p className="text-gray-600 mb-6">{module.description}</p>
             <Link href={module.href}>
