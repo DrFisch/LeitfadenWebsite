@@ -3,7 +3,7 @@ import Features from '../components/Features';
 
 export default function HomePage() {
   return (
-    <main className="bg-inherit text-gray-900 flex-grow">
+    <main className="bg-inherit text-gray-900 flex-grow min-h-[82vh]">
       
       <Hero
         title="Leitfaden zur Linux-Migration"
