@@ -21,8 +21,8 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section
-      className={`relative bg-cover text-white ${
-        small ? 'pt-20 pb-10' : 'py-20'
+      className={`relative bg-cover text-stone-50 ${
+        small ? 'pt-20 pb-10' : 'pt-20 pb-10'
       }`} // Dynamische Höhe
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
