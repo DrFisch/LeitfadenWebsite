@@ -24,7 +24,7 @@ export default function DecisionMakingPage() {
             title: 'Fragebogen',
             description:
               'Beantworten Sie einen interaktiven Fragebogen, um zu sehen, ob eine Migration für Ihre Behörde geeignet ist.',
-            href: '/decision-making/quiz',
+            href: '/decision-making/fragebogen',
             icon: ClipboardDocumentListIcon,
           },
         ]}
