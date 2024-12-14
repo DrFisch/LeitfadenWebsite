@@ -1,5 +1,6 @@
 import QuestionnaireTable from '@/components/decision-making/fragebogen/TableFragebogen';
-import { questionnaireQuestions } from '@/data/Fragebogen/fragebogenQuestions';
+import { generalQuestions } from '@/data/Fragebogen/generalQuestions';
+import { specificQuestions } from '@/data/Fragebogen/specificQuestions';
 
 export default function QuestionnairePage() {
   return (
@@ -10,7 +11,7 @@ export default function QuestionnairePage() {
           Beantworten Sie die folgenden Fragen, um eine Einschätzung zu erhalten, ob eine Migration auf Linux für Ihre
           Behörde sinnvoll ist.
         </p>
-        <QuestionnaireTable questions={questionnaireQuestions} />
+        <QuestionnaireTable generalQuestions={generalQuestions} specificQuestions={specificQuestions} />
       </section>
     </main>
   );
