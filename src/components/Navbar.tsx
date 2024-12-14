@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link'; // Importiere Link aus next/link
 
 const navigation = [
   { name: 'Entscheidungsfindung', href: '/decision-making' },
@@ -17,11 +18,11 @@ export default function Navbar() {
   const pathname = usePathname(); // Aktueller Pfad
 
   return (
-    <nav className="bg-gradient-to-r from-sky-500 to-blue-900 shadow-md ">
+    <nav className="bg-gradient-to-r from-sky-500 to-blue-900 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-6">
         {/* Logo und Titel */}
-        <div className="flex items-center ">
-          <a href="/">
+        <div className="flex items-center">
+          <Link href="/">
             <Image
               src="/haw2.png" // Pfad zum Logo
               alt="Logo"
@@ -29,16 +30,16 @@ export default function Navbar() {
               height={100} // Höhe des Logos
               className="rounded-full"
             />
-          </a>
-          <a href="/" className="text-2xl font-bold text-white">
+          </Link>
+          <Link href="/" className="text-2xl font-bold text-white">
             Linux Migration Leitfaden
-          </a>
+          </Link>
         </div>
 
         {/* Navigation Links */}
         <div className="hidden lg:flex gap-x-6">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={`text-sm font-semibold px-2 py-1 rounded-md transition-all ${
@@ -48,7 +49,7 @@ export default function Navbar() {
               }`}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -65,7 +66,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-lg">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={`block px-4 py-2 text-sm font-semibold rounded-md transition-all ${
@@ -75,7 +76,7 @@ export default function Navbar() {
               }`}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}
