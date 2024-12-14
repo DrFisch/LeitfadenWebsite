@@ -70,22 +70,21 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-lg">
           {navigation.map((item) => {
-  const isActive = pathname.startsWith(item.href);
-  return (
-    <Link
-      key={item.name}
-      href={item.href}
-      className={`block px-4 py-2 text-sm font-semibold rounded-md transition-all ${
-        isActive
-          ? 'bg-indigo-700 text-indigo-200'
-          : 'text-gray-900 hover:bg-gray-100'
-      }`}
-    >
-      {item.name}
-    </Link>
-  );
-})}
-
+            const isActive = pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`block px-4 py-2 text-sm font-semibold rounded-md transition-all ${
+                  isActive
+                    ? 'bg-indigo-700 text-indigo-200'
+                    : 'text-gray-900 hover:bg-gray-100'
+                }`}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
       )}
     </nav>
