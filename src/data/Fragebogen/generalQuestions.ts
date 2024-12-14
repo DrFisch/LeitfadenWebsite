@@ -1,4 +1,6 @@
-export const generalQuestions = [
+import { GeneralQuestion } from '@/components/decision-making/fragebogen/TableFragebogen';
+
+export const generalQuestions: GeneralQuestion[] = [
   {
     id: 'q1',
     question: 'Hat Ihre Behörde wenige bestehende Verträge mit proprietären Anbietern?',
