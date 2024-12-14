@@ -39,21 +39,21 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="hidden lg:flex gap-x-6">
         {navigation.map((item) => {
-  const isActive = pathname.startsWith(item.href); // Prüft, ob der aktuelle Pfad mit dem href startet
-  return (
-    <Link
-      key={item.name}
-      href={item.href}
-      className={`text-sm font-semibold px-2 py-1 rounded-md transition-all ${
-        isActive
-          ? 'text-white bg-indigo-800'
-          : 'text-white hover:text-white hover:bg-indigo-600'
-      }`}
-    >
-      {item.name}
-    </Link>
-  );
-})}
+          const isActive = pathname.startsWith(item.href); // Prüft, ob der aktuelle Pfad mit dem href startet
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`text-sm font-semibold px-2 py-1 rounded-md transition-all ${
+                isActive
+                  ? 'text-white bg-indigo-800'
+                  : 'text-white hover:text-white hover:bg-indigo-600'
+              }`}
+            >
+              {item.name}
+            </Link>
+          );
+        })}
 
         </div>
 
