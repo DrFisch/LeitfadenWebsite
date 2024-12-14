@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+import { berechneScore } from '@/utils/fragebogenBerechnung';
 
 type QuestionType = 'dropdown' | 'checkbox';
 
@@ -17,6 +18,7 @@ export interface SpecificQuestion {
   question: string;
   type: QuestionType;
   options: string[];
+  weights: number[];
 }
 
 interface QuestionsTableProps {
@@ -27,6 +29,7 @@ interface QuestionsTableProps {
 export default function QuestionsTable({ generalQuestions, specificQuestions }: QuestionsTableProps) {
   const [generalAnswers, setGeneralAnswers] = useState<{ [key: string]: string }>({});
   const [specificAnswers, setSpecificAnswers] = useState<{ [key: string]: string[] | string }>({});
+  const [evaluationResult, setEvaluationResult] = useState<number | null>(null);
 
   // Sortiere die spezifischen Fragen: dropdown zuerst, dann checkbox
   const sortedSpecificQuestions = [...specificQuestions].sort((a, b) => {
@@ -41,6 +44,18 @@ export default function QuestionsTable({ generalQuestions, specificQuestions }: 
 
   const handleSpecificAnswerChange = (questionId: string, value: string | string[]) => {
     setSpecificAnswers((prev) => ({ ...prev, [questionId]: value }));
+  };
+
+  const handleEvaluation = () => {
+    const result = berechneScore(
+      
+      generalQuestions,
+      specificQuestions,
+      generalAnswers,
+      specificAnswers
+    );
+    setEvaluationResult(result);
+    console.log('Auswertungsergebnis:', result);
   };
 
   return (
@@ -142,12 +157,20 @@ export default function QuestionsTable({ generalQuestions, specificQuestions }: 
       {/* Ergebnisse */}
       <div className="flex justify-end">
         <button
-          onClick={() => console.log('Allgemeine Antworten:', generalAnswers, 'Spezifische Antworten:', specificAnswers)}
+          onClick={handleEvaluation}
           className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
         >
           Ergebnisse anzeigen
         </button>
       </div>
+      
+      {/* Ergebnisanzeige */}
+      {evaluationResult && (
+        <div className="mt-6 p-4 bg-green-100 text-green-800 rounded-lg shadow">
+          <h3 className="text-lg font-bold">Ergebnisse</h3>
+          <p>{evaluationResult}</p>
+        </div>
+      )}
     </div>
   );
 }
