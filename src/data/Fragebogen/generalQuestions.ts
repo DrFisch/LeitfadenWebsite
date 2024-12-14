@@ -59,6 +59,6 @@ export const generalQuestions: GeneralQuestion[] = [
     id: 'q10',
     question: 'Ist Ihre Behörde bereit, in Schulungen und Beratung zu investieren?',
     info: 'Investitionen in Schulungen und Beratung können den Erfolg einer Migration erheblich steigern.',
-    weight: 5, // Beispielgewicht
+    weight: 1, // Beispielgewicht
   },
 ];

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import { berechneScore } from '@/utils/fragebogenBerechnung';
 
@@ -30,6 +31,7 @@ export default function QuestionsTable({ generalQuestions, specificQuestions }: 
   const [generalAnswers, setGeneralAnswers] = useState<{ [key: string]: string }>({});
   const [specificAnswers, setSpecificAnswers] = useState<{ [key: string]: string[] | string }>({});
   const [evaluationResult, setEvaluationResult] = useState<number | null>(null);
+  const router = useRouter();
 
   // Sortiere die spezifischen Fragen: dropdown zuerst, dann checkbox
   const sortedSpecificQuestions = [...specificQuestions].sort((a, b) => {
@@ -47,15 +49,18 @@ export default function QuestionsTable({ generalQuestions, specificQuestions }: 
   };
 
   const handleEvaluation = () => {
-    const result = berechneScore(
-      
+    const score = berechneScore(
       generalQuestions,
       specificQuestions,
+      
       generalAnswers,
       specificAnswers
     );
-    setEvaluationResult(result);
-    console.log('Auswertungsergebnis:', result);
+
+    // Weiterleitung zur Auswertungsseite
+    router.push(
+      `/decision-making/fragebogen/auswertung?generalAnswers=${encodeURIComponent(JSON.stringify(generalAnswers))}&specificAnswers=${encodeURIComponent(JSON.stringify(specificAnswers))}&score=${score}`
+    );
   };
 
   return (
@@ -163,7 +168,7 @@ export default function QuestionsTable({ generalQuestions, specificQuestions }: 
           Ergebnisse anzeigen
         </button>
       </div>
-      
+
       {/* Ergebnisanzeige */}
       {evaluationResult && (
         <div className="mt-6 p-4 bg-green-100 text-green-800 rounded-lg shadow">
