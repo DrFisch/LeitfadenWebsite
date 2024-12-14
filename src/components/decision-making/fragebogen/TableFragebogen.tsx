@@ -5,10 +5,11 @@ import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 type QuestionType = 'dropdown' | 'checkbox';
 
-interface GeneralQuestion {
+export interface GeneralQuestion {
   id: string;
   question: string;
   info?: string;
+  weight: number;
 }
 
 export interface SpecificQuestion {
@@ -18,14 +19,21 @@ export interface SpecificQuestion {
   options: string[];
 }
 
-interface QuestionnaireTableProps {
+interface QuestionsTableProps {
   generalQuestions: GeneralQuestion[];
   specificQuestions: SpecificQuestion[];
 }
 
-export default function QuestionnaireTable({ generalQuestions, specificQuestions }: QuestionnaireTableProps) {
+export default function QuestionsTable({ generalQuestions, specificQuestions }: QuestionsTableProps) {
   const [generalAnswers, setGeneralAnswers] = useState<{ [key: string]: string }>({});
   const [specificAnswers, setSpecificAnswers] = useState<{ [key: string]: string[] | string }>({});
+
+  // Sortiere die spezifischen Fragen: dropdown zuerst, dann checkbox
+  const sortedSpecificQuestions = [...specificQuestions].sort((a, b) => {
+    if (a.type === 'dropdown' && b.type === 'checkbox') return -1;
+    if (a.type === 'checkbox' && b.type === 'dropdown') return 1;
+    return 0;
+  });
 
   const handleGeneralAnswerChange = (questionId: string, value: string) => {
     setGeneralAnswers((prev) => ({ ...prev, [questionId]: value }));
@@ -39,7 +47,7 @@ export default function QuestionnaireTable({ generalQuestions, specificQuestions
     <div className="space-y-8">
       {/* Allgemeine Fragen */}
       <div className="overflow-x-auto">
-        <h2 className="text-lg font-bold mb-4">Allgemeine Fragen</h2>
+        <h2 className="text-lg font-bold mb-4 border-b-2 border-gray-600">Allgemeine Fragen</h2>
         <table className="min-w-full border-collapse border border-gray-200 bg-gray-50 shadow-md rounded-lg">
           <thead>
             <tr>
@@ -86,10 +94,10 @@ export default function QuestionnaireTable({ generalQuestions, specificQuestions
 
       {/* Spezifische Fragen */}
       <div>
-        <h2 className="text-lg font-bold mb-4">Spezifische Fragen</h2>
-        {specificQuestions.map((q) => (
+        <h2 className="text-lg font-bold mb-4 border-b-2 border-gray-600">Spezifische Fragen</h2>
+        {sortedSpecificQuestions.map((q) => (
           <div key={q.id} className="mb-4">
-            <h3 className="text-md font-semibold text-gray-700">{q.question}</h3>
+            <h3 className="text-lg font-bold text-gray-700">{q.question}</h3>
             {q.type === 'dropdown' ? (
               <select
                 value={specificAnswers[q.id] || ''}
