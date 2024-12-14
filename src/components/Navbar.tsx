@@ -38,19 +38,23 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <div className="hidden lg:flex gap-x-6">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`text-sm font-semibold px-2 py-1 rounded-md transition-all ${
-                pathname === item.href
-                  ? 'text-white bg-indigo-800'
-                  : 'text-white hover:text-white hover:bg-indigo-600 '
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+        {navigation.map((item) => {
+  const isActive = pathname.startsWith(item.href); // Prüft, ob der aktuelle Pfad mit dem href startet
+  return (
+    <Link
+      key={item.name}
+      href={item.href}
+      className={`text-sm font-semibold px-2 py-1 rounded-md transition-all ${
+        isActive
+          ? 'text-white bg-indigo-800'
+          : 'text-white hover:text-white hover:bg-indigo-600'
+      }`}
+    >
+      {item.name}
+    </Link>
+  );
+})}
+
         </div>
 
         {/* Mobile Menu Button */}
@@ -65,19 +69,23 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-lg">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`block px-4 py-2 text-sm font-semibold rounded-md transition-all ${
-                pathname === item.href
-                  ? 'bg-indigo-700 text-indigo-200'
-                  : 'text-gray-900 hover:bg-gray-100'
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item) => {
+  const isActive = pathname.startsWith(item.href);
+  return (
+    <Link
+      key={item.name}
+      href={item.href}
+      className={`block px-4 py-2 text-sm font-semibold rounded-md transition-all ${
+        isActive
+          ? 'bg-indigo-700 text-indigo-200'
+          : 'text-gray-900 hover:bg-gray-100'
+      }`}
+    >
+      {item.name}
+    </Link>
+  );
+})}
+
         </div>
       )}
     </nav>
