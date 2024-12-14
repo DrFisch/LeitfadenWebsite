@@ -1,6 +1,6 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+//import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { generalQuestions } from '@/data/Fragebogen/generalQuestions';
 
@@ -14,29 +14,22 @@ const answerMapping: { [key: string]: string } = {
 };
 
 export default function AuswertungPage() {
-  const searchParams = useSearchParams();
+  //const router = useRouter();
   const [generalAnswers, setGeneralAnswers] = useState<{ [key: string]: string }>({});
   const [specificAnswers, setSpecificAnswers] = useState<{ [key: string]: string[] | string }>({});
   const [score, setScore] = useState<number | null>(null);
 
   useEffect(() => {
-    // Extrahiere die Daten aus den Query-Parametern
-    const generalAnswersParam = searchParams.get('generalAnswers');
-    const specificAnswersParam = searchParams.get('specificAnswers');
-    const scoreParam = searchParams.get('score');
+    const query = new URLSearchParams(window.location.search);
 
-    if (generalAnswersParam) {
-      setGeneralAnswers(JSON.parse(decodeURIComponent(generalAnswersParam)));
-    }
+    const generalAnswersParam = query.get('generalAnswers');
+    const specificAnswersParam = query.get('specificAnswers');
+    const scoreParam = query.get('score');
 
-    if (specificAnswersParam) {
-      setSpecificAnswers(JSON.parse(decodeURIComponent(specificAnswersParam)));
-    }
-
-    if (scoreParam) {
-      setScore(parseInt(scoreParam, 10));
-    }
-  }, [searchParams]);
+    if (generalAnswersParam) setGeneralAnswers(JSON.parse(decodeURIComponent(generalAnswersParam)));
+    if (specificAnswersParam) setSpecificAnswers(JSON.parse(decodeURIComponent(specificAnswersParam)));
+    if (scoreParam) setScore(parseInt(scoreParam, 10));
+  }, []);
 
   return (
     <div className="container mx-auto p-6">

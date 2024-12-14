@@ -30,7 +30,6 @@ interface QuestionsTableProps {
 export default function QuestionsTable({ generalQuestions, specificQuestions }: QuestionsTableProps) {
   const [generalAnswers, setGeneralAnswers] = useState<{ [key: string]: string }>({});
   const [specificAnswers, setSpecificAnswers] = useState<{ [key: string]: string[] | string }>({});
-  const [evaluationResult, setEvaluationResult] = useState<number | null>(null);
   const router = useRouter();
 
   // Sortiere die spezifischen Fragen: dropdown zuerst, dann checkbox
@@ -169,13 +168,7 @@ export default function QuestionsTable({ generalQuestions, specificQuestions }: 
         </button>
       </div>
 
-      {/* Ergebnisanzeige */}
-      {evaluationResult && (
-        <div className="mt-6 p-4 bg-green-100 text-green-800 rounded-lg shadow">
-          <h3 className="text-lg font-bold">Ergebnisse</h3>
-          <p>{evaluationResult}</p>
-        </div>
-      )}
+      
     </div>
   );
 }
