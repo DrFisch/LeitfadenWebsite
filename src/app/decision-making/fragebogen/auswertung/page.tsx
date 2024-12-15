@@ -6,19 +6,31 @@ import Auswertung from '@/components/decision-making/fragebogen/auswertung/Auswe
 export default function AuswertungPage() {
   const [generalAnswers, setGeneralAnswers] = useState<{ [key: string]: string }>({});
   const [specificAnswers, setSpecificAnswers] = useState<{ [key: string]: string[] | string }>({});
-  const [score, setScore] = useState<number | null>(null);
+  
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
-
+  
     const generalAnswersParam = query.get('generalAnswers');
     const specificAnswersParam = query.get('specificAnswers');
-    const scoreParam = query.get('score');
-
+  
     if (generalAnswersParam) setGeneralAnswers(JSON.parse(decodeURIComponent(generalAnswersParam)));
-    if (specificAnswersParam) setSpecificAnswers(JSON.parse(decodeURIComponent(specificAnswersParam)));
-    if (scoreParam) setScore(parseInt(scoreParam, 10));
+    
+    if (specificAnswersParam) {
+      const parsedSpecificAnswers = JSON.parse(decodeURIComponent(specificAnswersParam));
+      const formattedSpecificAnswers: { [key: string]: string } = Object.keys(parsedSpecificAnswers).reduce(
+        (acc, key) => {
+          acc[key] = Array.isArray(parsedSpecificAnswers[key])
+            ? parsedSpecificAnswers[key].join(', ') // Konvertiere string[] zu string
+            : parsedSpecificAnswers[key];
+          return acc;
+        },
+        {} as { [key: string]: string }
+      );
+      setSpecificAnswers(formattedSpecificAnswers);
+    }
   }, []);
+  
 
   return (
     <main className="min-h-screen bg-inherit ">
