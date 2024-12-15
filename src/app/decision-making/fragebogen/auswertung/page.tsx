@@ -22,6 +22,6 @@ export default function AuswertungPage() {
 
   return (
     <main className="min-h-screen bg-inherit ">
-      <Auswertung generalAnswers={generalAnswers} specificAnswers={specificAnswers} score={score} />
+      <Auswertung generalAnswers={generalAnswers} specificAnswers={specificAnswers}  />
     </main>);
 }

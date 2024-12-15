@@ -48,17 +48,11 @@ export default function QuestionsTable({ generalQuestions, specificQuestions }: 
   };
 
   const handleEvaluation = () => {
-    const score = berechneScore(
-      generalQuestions,
-      specificQuestions,
-      
-      generalAnswers,
-      specificAnswers
-    );
+    
 
     // Weiterleitung zur Auswertungsseite
     router.push(
-      `/decision-making/fragebogen/auswertung?generalAnswers=${encodeURIComponent(JSON.stringify(generalAnswers))}&specificAnswers=${encodeURIComponent(JSON.stringify(specificAnswers))}&score=${score}`
+      `/decision-making/fragebogen/auswertung?generalAnswers=${encodeURIComponent(JSON.stringify(generalAnswers))}&specificAnswers=${encodeURIComponent(JSON.stringify(specificAnswers))}`
     );
   };
 

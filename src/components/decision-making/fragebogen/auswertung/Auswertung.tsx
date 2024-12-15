@@ -15,7 +15,7 @@ const answerMapping: { [key: string]: string } = {
 interface AuswertungProps {
   generalAnswers: { [key: string]: string };
   specificAnswers: { [key: string]: string[] | string };
-  score: number | null;
+  
 }
 
 const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers }) => {
