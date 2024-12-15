@@ -24,13 +24,13 @@ const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers
 
   Object.entries(generalAnswers).forEach(([id, answer]) => {
     const question = generalQuestions.find((q) => q.id === id);
-    if (!question) return;
+    if (!question || answer === 'keine-antwort') return;
 
     const maxPoints = question.weight * 5;
     möglichePunkte += maxPoints;
 
     const answerPoints: Record<
-      'voll' | 'zu' | 'mittel' | 'wenig' | 'gar-nicht' | 'keine-antwort',
+      'voll' | 'zu' | 'mittel' | 'wenig' | 'gar-nicht',
       number
     > = {
       voll: maxPoints,
@@ -38,7 +38,6 @@ const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers
       mittel: question.weight * 3,
       wenig: question.weight * 2,
       'gar-nicht': question.weight * 1,
-      'keine-antwort': 0,
     };
 
     erreichtePunkte += answerPoints[answer as keyof typeof answerPoints] || 0;
@@ -46,12 +45,11 @@ const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers
 
   const prozent = möglichePunkte > 0 ? Math.round((erreichtePunkte / möglichePunkte) * 100) : 0;
 
-  // Dynamische Hintergrundfarbe basierend auf dem Prozentsatz
   const resultBgColor =
     prozent > 75
-      ? 'bg-green-200 text-green-800'
+      ? 'bg-green-100 text-green-800'
       : prozent > 40
-      ? 'bg-yellow-100 text-yellow-800'
+      ? 'bg-yellow-200 text-yellow-800'
       : 'bg-red-200 text-red-800';
 
   return (
@@ -95,7 +93,7 @@ const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers
 
               const maxPoints = question.weight * 5;
               const answerPoints: Record<
-                'voll' | 'zu' | 'mittel' | 'wenig' | 'gar-nicht' | 'keine-antwort',
+                'voll' | 'zu' | 'mittel' | 'wenig' | 'gar-nicht',
                 number
               > = {
                 voll: maxPoints,
@@ -103,27 +101,28 @@ const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers
                 mittel: question.weight * 3,
                 wenig: question.weight * 2,
                 'gar-nicht': question.weight * 1,
-                'keine-antwort': 0,
               };
 
-              const points = answerPoints[answer as keyof typeof answerPoints] || 0;
-              const percentage = Math.round((points / maxPoints) * 100);
+              const points = answer === 'keine-antwort' ? null : answerPoints[answer as keyof typeof answerPoints];
+              const percentage = points !== null ? Math.round((points / maxPoints) * 100) : null;
 
               const bgColor =
-                percentage > 75
-                  ? 'bg-green-200 text-green-800'
-                  : percentage > 40
-                  ? 'bg-yellow-200 text-yellow-800'
-                  : 'bg-red-200 text-red-800';
+                percentage !== null
+                  ? percentage > 75
+                    ? 'bg-green-200 text-green-800'
+                    : percentage > 40
+                    ? 'bg-yellow-200 text-yellow-800'
+                    : 'bg-red-200 text-red-800'
+                  : 'bg-gray-200 text-gray-600';
 
               return (
                 <tr key={id}>
                   <td className="border border-gray-200 px-4 py-2">{question.question}</td>
-                  <td className="border border-gray-200 px-4 py-2 text-center">{answerMapping[answer] || 'Unbekannte Antwort'}</td>
+                  <td className="border border-gray-200 px-4 py-2 text-center">{answerMapping[answer]}</td>
                   <td
                     className={`border border-gray-200 px-4 py-2 text-center font-bold ${bgColor}`}
                   >
-                    {percentage}%
+                    {points === null ? 'Keine Antwort' : `${percentage}%`}
                   </td>
                   <td className="border border-gray-200 px-4 py-2">{question.info || 'Keine Erklärung verfügbar'}</td>
                 </tr>
