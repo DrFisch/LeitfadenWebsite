@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+
 
 type QuestionType = 'dropdown' | 'checkbox';
 
