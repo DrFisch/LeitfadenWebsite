@@ -4,6 +4,21 @@ import { AcademicCapIcon, ClipboardDocumentListIcon } from '@heroicons/react/24/
 import ModuleDescription from '@/components/decision-making/Features';
 
 export default function DecisionMakingPage() {
+
+  const rightContent = {
+    title: 'Details zu den Modulen',
+    paragraphs: [
+      'Entdecken Sie die theoretischen Grundlagen zur Linux-Migration oder beantworten Sie unseren interaktiven Fragebogen, um herauszufinden, ob Ihre Behörde für die Migration geeignet ist.',
+    ],
+    list: [
+      'Theorie: Detaillierte Grundlagen und Nutzenbewertung',
+      'Fragebogen: Interaktive Bewertung Ihrer Behörde',
+      
+      
+    ],
+    footer: 'Wählen Sie links ein Modul aus, um weitere Informationen zu erhalten.',
+  };
+
   return (
     <main className='min-h-[82vh]'>
       <ModuleDescription
@@ -28,6 +43,9 @@ export default function DecisionMakingPage() {
             icon: ClipboardDocumentListIcon,
           },
         ]}
+        rightContent= {
+          rightContent
+        }
       />
     </main>
   );
