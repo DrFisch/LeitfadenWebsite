@@ -1,5 +1,20 @@
+import { Challenge } from './huerden';
 import { CogIcon, DevicePhoneMobileIcon, AcademicCapIcon, ShieldCheckIcon, UserGroupIcon, ServerIcon,QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
+export type IconType = typeof CogIcon;
+
+export interface Step {
+    id: string;
+    title: string;
+    icon: IconType;
+    description: string;
+    reference: string;
+    content: {
+      text: string;
+      tooltip?: string;
+    }[];
+    huerden: string[]; // IDs der Hürden
+  }
 
 export const steps = [
     {
@@ -24,7 +39,7 @@ export const steps = [
           
         },
       ],
-      huerden: ['huerde1', 'huerde2'],
+      huerden: ['huerde1', 'huerde3'],
     },
     {
       id: 'step2',

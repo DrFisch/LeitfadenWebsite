@@ -1,4 +1,12 @@
-export const huerden = [
+export interface Challenge {
+    id: string;
+    title: string;
+    description: string;
+    solution: string;
+    reference: string;
+  }
+  
+  export const huerden: Challenge[] = [
     {
       id: 'huerde1',
       title: 'Unklare Verantwortlichkeiten',
