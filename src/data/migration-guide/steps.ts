@@ -39,7 +39,13 @@ export const steps = [
           
         },
       ],
-      huerden: ['huerde1', 'huerde3'],
+      huerden: [
+        'huerde1', // Unklare Verantwortlichkeiten
+      'huerde2', // Fehlende Risikobewertung
+      'huerde15',// Hoher Planungsaufwand für Integration
+      'huerde16', //Hohe Kosten und Zeitaufwand
+      'huerde25', //Mangel an Linux-Erfahrung in IT-Teams
+      ],
     },
     {
       id: 'step2',
@@ -62,7 +68,18 @@ export const steps = [
           
         },
       ],
-      huerden: ['huerde1', 'huerde2'],
+      huerden: [
+        'huerde3', // Hardware-Kompatibilität
+      'huerde4', // Datenverlust bei Migration
+      'huerde10', // Inkompatibilität von Peripheriegeräten
+      'huerde11', //Hoher Aufwand für Bestandsaufnahme der Hardware
+      'huerde13', //Fehlende Kompatibilität bestehender Monitoring-Tools
+      'huerde18', // Fehlende Unterstützung durch Linux-Treiber
+      'huerde19', // Notwendigkeit von Hardware-Upgrades
+      'huerde20', // Schwierigkeiten bei der Übertragung bestehender Datenbestände
+      'huerde21', // Inkompatibilität von Dateiformaten und -strukturen
+
+    ],
     },
     {
       id: 'step3',
@@ -85,7 +102,13 @@ export const steps = [
           
         },
       ],
-      huerden: ['huerde1', 'huerde2'],
+      huerden: [
+        'huerde1', // Unklare Verantwortlichkeiten
+      'huerde4', // Datenverlust bei Migration
+      'huerde12', //Anpassung oder Ersatz von Backup- und Recovery-Lösungen
+      'huerde14', // Schulungsbedarf für neue Backup- und Monitoring-Systeme
+      
+      ],
     },
     {
       id: 'step4',
@@ -108,7 +131,16 @@ export const steps = [
           
         },
       ],
-      huerden: ['huerde1', 'huerde2'],
+      huerden: [
+        'huerde2', // Fehlende Risikobewertung
+      'huerde3', // Hardware-Kompatibilität
+      'huerde4', // Datenverlust bei Migration
+      'huerde6', // Komplexität der bestehenden IT-Infrastruktur
+      'huerde7', // Inkompatibilität mit Microsoft Active Directory
+      'huerde8', // Fehlendes Wissen über neue Tools und Konzepte
+      'huerde9', // Anpassung der Sicherheitssysteme und Protokolle
+      'huerde12', //Risiko von Datenverlust und Konsistenzproblemen
+    ],
     },
     {
       id: 'step5',
@@ -127,7 +159,15 @@ export const steps = [
           
         },
       ],
-      huerden: ['huerde1', 'huerde2'],
+      huerden: [
+        'huerde1', // Unklare Verantwortlichkeiten
+      'huerde5', // Fehlende Unterstützung durch Softwarehersteller
+      'huerde14', //Schulungsbedarf für neue Backup- und Monitoring-Systeme
+      'huerde25', // Mangel an Linux-Erfahrung in IT-Teams
+      'huerde26', // Umgewöhnung an neue Programme und Benutzeroberflächen
+      'huerde28', //Ersatz oder Anpassung von Standardprogrammen
+      'huerde30', //Anpassung von Arbeitsprozessen an neue Software
+    ],
     },
     {
       id: 'step6',
@@ -150,6 +190,11 @@ export const steps = [
           
         },
       ],
-      huerden: ['huerde1', 'huerde2'],
+      huerden: [
+        'huerde4', // Datenverlust bei Migration
+        'huerde3', // Hardware-Kompatibilität
+        'huerde9', //Anpassung der Sicherheitssysteme und Protokolle
+        'huerde17', //Sicherstellung der Systemstabilität
+      ],
     },
   ];
