@@ -1,6 +1,6 @@
 'use client';
 
-import { AcademicCapIcon, ClipboardDocumentIcon , HandRaisedIcon} from '@heroicons/react/24/outline';
+import { AcademicCapIcon, ClipboardDocumentIcon } from '@heroicons/react/24/outline';
 import ModuleDescription from '@/components/decision-making/Features';
 
 export default function GuideOverviewPage() {
