@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { steps } from '@/data/migration-guide/steps';
-import { huerden, Challenge } from '@/data/migration-guide/huerden';
+import { huerden } from '@/data/migration-guide/huerden';
 
 export default function MigrationGuide() {
   const [activeStep, setActiveStep] = useState(0);
