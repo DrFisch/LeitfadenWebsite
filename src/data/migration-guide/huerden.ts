@@ -198,4 +198,37 @@ export interface Challenge {
       reference: 'Kapitel 6.6.2 in der Studienarbeit',
     },
     // 6.7
+    {
+      id: 'huerde31',
+      title: 'Einhaltung von Sicherheitsrichtlinien und Standards',
+      description:
+        'Linux-Systeme müssen spezifische Sicherheitsrichtlinien, wie die DSGVO und Standards wie ISO 27001, erfüllen. Dies erfordert detaillierte Planung und spezifische Anpassungen, um die Einhaltung der Vorgaben sicherzustellen.',
+      solution: 'Platzhalter für Lösung.',
+      reference: 'Kapitel 6.7 in der Studienarbeit',
+    },
+    {
+      id: 'huerde32',
+      title: 'Herausforderungen im Patch-Management',
+      description:
+        'Die Einspielung von Patches muss zeitnah erfolgen, um Sicherheitslücken zu schließen. Gleichzeitig muss jedoch die Stabilität der Systeme gewährleistet bleiben, was umfangreiche Tests und Prüfungen erfordert.',
+      solution: 'Platzhalter für Lösung.',
+      reference: 'Kapitel 6.7 in der Studienarbeit',
+    },
+    // 6.8
+    {
+      id: 'huerde33',
+      title: 'Migration von Exchange-Servern',
+      description:
+        'Die Migration von Exchange-Servern zu Open-Source-Mailservern wie Postfix stellt eine große technische Herausforderung dar. Funktionen wie Kalender- und Kontaktverwaltung müssen migriert und getestet werden, um Ausfälle zu vermeiden.',
+      solution: 'Platzhalter für Lösung.',
+      reference: 'Kapitel 6.5 in der Studienarbeit',
+    },
+    {
+      id: 'huerde34',
+      title: 'Inkompatibilität proprietärer Office-Formate',
+      description:
+        'Der Wechsel von Microsoft Office zu Open-Source-Alternativen wie LibreOffice führt zu Problemen, da bestehende Datenbestände in proprietären Formaten gespeichert sind, die nicht immer vollständig kompatibel sind.',
+      solution: 'Platzhalter für Lösung.',
+      reference: 'Kapitel 6.5 in der Studienarbeit',
+    },
   ];

@@ -140,6 +140,7 @@ export const steps  = [
       'huerde8', // Fehlendes Wissen über neue Tools und Konzepte
       'huerde9', // Anpassung der Sicherheitssysteme und Protokolle
       'huerde12', //Risiko von Datenverlust und Konsistenzproblemen
+      'huerde33', // Migration von Exchange-Servern
     ],
     },
     {
@@ -167,6 +168,7 @@ export const steps  = [
       'huerde26', // Umgewöhnung an neue Programme und Benutzeroberflächen
       'huerde28', //Ersatz oder Anpassung von Standardprogrammen
       'huerde30', //Anpassung von Arbeitsprozessen an neue Software
+      'huerde34', //Inkompatibilität proprietärer Office-Formate
     ],
     },
     {
@@ -195,6 +197,8 @@ export const steps  = [
         'huerde3', // Hardware-Kompatibilität
         'huerde9', //Anpassung der Sicherheitssysteme und Protokolle
         'huerde17', //Sicherstellung der Systemstabilität
+        'huerde31', // Einhaltung von Sicherheitsrichtlinien und Standards
+        'huerde32', // Herausforderungen im Patch-Management
       ],
     },
   ];
