@@ -41,7 +41,7 @@ export default function MigrationGuide() {
             >
               <div className="flex flex-col items-center">
                 <step.icon className="h-8 w-8 mb-2" />
-                <span className="text-sm font-medium">{step.title}</span>
+                <span className="text-sm font-medium ">{step.title}</span>
               </div>
             </button>
           ))}
@@ -49,9 +49,9 @@ export default function MigrationGuide() {
 
         {/* Inhalt */}
         <div className="bg-white rounded-lg shadow-md p-6 relative">
-          <h2 className="text-2xl font-bold text-indigo-600 mb-4">{steps[activeStep].title}</h2>
+          <h2 className="text-2xl font-bold text-indigo-600 mb-4 border-b-2 border-gray-500">{steps[activeStep].title}</h2>
           <p className="text-gray-700 mb-6">{steps[activeStep].description}</p>
-          <h3 className="text-xl font-bold mb-4">Ablauf</h3>
+          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-400">Ablauf</h3>
 
           <ul className="list-disc list-inside text-gray-600 space-y-4">
             {steps[activeStep].content.map((item, index) => (
@@ -61,7 +61,8 @@ export default function MigrationGuide() {
 
           {/* Technische Herausforderungen - Accordion */}
           <div className="mt-6">
-            <h3 className="text-xl font-bold mb-4 text-gray-800">Technische Herausforderungen</h3>
+          <h3 className="text-xl font-bold mb-4 text-gray-800 border-b-2 border-gray-400  pt-4">
+          Technische Herausforderungen</h3>
             <div className="space-y-2">
               {steps[activeStep].huerden?.map((huerdeId) => {
                 const challenge = huerden.find((h) => h.id === huerdeId);
@@ -71,9 +72,9 @@ export default function MigrationGuide() {
                       <h2>
                         <button
                           onClick={() => toggleAccordion(challenge.id)}
-                          className="flex justify-between items-center w-full px-4 py-4 bg-indigo-100 hover:bg-indigo-200 text-gray-700 font-medium rounded-t-lg transition"
+                          className="flex justify-between items-center w-full px-4 py-4 bg-blue-100 hover:bg-indigo-200 text-gray-700 font-medium rounded-t-lg transition"
                         >
-                          <span className="text-indigo-700">{challenge.title}</span>
+                          <span className="">{challenge.title}</span>
                           <svg
                             className={`w-5 h-5 transform ${
                               openAccordion === challenge.id ? 'rotate-180' : 'rotate-0'
@@ -98,19 +99,16 @@ export default function MigrationGuide() {
                         }`}
                       >
                         <div className="p-5 bg-white rounded-b-lg">
-                          <p className="text-gray-600 mb-4">
-                            <span className="font-semibold text-gray-800">Beschreibung:</span>{' '}
-                            {challenge.description}
-                          </p>
-                          <p className="text-gray-600 mb-4">
-                            <span className="font-semibold text-gray-800">Lösung:</span>{' '}
-                            {challenge.solution}
-                          </p>
-                          <p className="text-sm text-gray-500">
-                            <span className="font-semibold text-gray-800">Verweis:</span>{' '}
-                            {challenge.solutionreference}
-                          </p>
+                          <h4 className="text-lg font-bold text-gray-800 mb-2">Beschreibung</h4>
+                          <p className="text-gray-600 mb-4">{challenge.description}</p>
+                          
+                          <h4 className="text-lg font-bold text-gray-800 mb-2 mt-4">Lösung</h4>
+                          <p className="text-gray-600 mb-4">{challenge.solution}</p>
+                          
+                          <h4 className="text-sm font-semibold text-gray-800 mb-2 mt-4">Verweis</h4>
+                          <p className="text-sm text-gray-500">{challenge.solutionreference}</p>
                         </div>
+
                       </div>
                     </div>
                   )
