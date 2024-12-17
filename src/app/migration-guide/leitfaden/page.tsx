@@ -111,6 +111,7 @@ export default function MigrationGuide() {
           description={selectedChallenge.description}
           solution={selectedChallenge.solution}
           reference={selectedChallenge.reference}
+          solutionreference={selectedChallenge.solutionreference}
         />
       )}
     </main>

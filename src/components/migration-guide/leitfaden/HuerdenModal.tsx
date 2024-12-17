@@ -6,6 +6,7 @@ interface ModalProps {
   title: string;
   description: string;
   solution: string;
+  solutionreference: string;
   reference: string;
 }
 
@@ -16,6 +17,7 @@ export default function Modal({
   description,
   solution,
   reference,
+  solutionreference
 }: ModalProps) {
   if (!isOpen) return null;
 
@@ -27,7 +29,10 @@ export default function Modal({
         <h3 className="text-xl font-semibold mb-2">Lösung</h3>
         <p className="text-gray-600 mb-4">{solution}</p>
         <p className="text-sm text-gray-500">
-          Verweis: <span className="text-indigo-500">{reference}</span>
+          Verweis Problem: <span className="text-indigo-500">{reference}</span>
+        </p>
+        <p className="text-sm text-gray-500">
+          Verweis Lösung: <span className="text-indigo-500">{solutionreference}</span>
         </p>
         <button
           className="mt-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
