@@ -1,21 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import Modal from '@/components/migration-guide/leitfaden/HuerdenModal';
 import { steps } from '@/data/migration-guide/steps';
 import { huerden, Challenge } from '@/data/migration-guide/huerden';
-import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 export default function MigrationGuide() {
   const [activeStep, setActiveStep] = useState(0);
-  const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(null);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
-  const handleOpenModal = (challenge: Challenge) => {
-    setSelectedChallenge(challenge);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedChallenge(null);
+  const toggleAccordion = (id: string) => {
+    setOpenAccordion(openAccordion === id ? null : id);
   };
 
   return (
@@ -54,66 +48,78 @@ export default function MigrationGuide() {
         </div>
 
         {/* Inhalt */}
-        <div className="bg-gray-50 rounded-lg shadow-md p-6 relative">
+        <div className="bg-white rounded-lg shadow-md p-6 relative">
           <h2 className="text-2xl font-bold text-indigo-600 mb-4">{steps[activeStep].title}</h2>
           <p className="text-gray-700 mb-6">{steps[activeStep].description}</p>
           <h3 className="text-xl font-bold mb-4">Ablauf</h3>
 
           <ul className="list-disc list-inside text-gray-600 space-y-4">
             {steps[activeStep].content.map((item, index) => (
-              <li key={index} className="relative">
-                <span>{item.text}</span>
-                {item.tooltip && (
-                  <div className="relative inline-block group ml-2">
-                    <QuestionMarkCircleIcon
-                      className="h-5 w-5 text-indigo-500 cursor-pointer"
-                    />
-                    <div className="absolute left-6 top-0 w-64 bg-gray-700 text-white text-sm p-2 rounded hidden group-hover:block z-10">
-                      {item.tooltip}
-                    </div>
-                  </div>
-                )}
-              </li>
+              <li key={index}>{item.text}</li>
             ))}
           </ul>
 
-          {/* Technische Herausforderungen */}
+          {/* Technische Herausforderungen - Accordion */}
           <div className="mt-6">
-            <h3 className="text-xl font-bold mb-4">Technische Herausforderungen</h3>
-            <ul className="list-disc list-inside space-y-4">
+            <h3 className="text-xl font-bold mb-4 text-gray-800">Technische Herausforderungen</h3>
+            <div className="space-y-2">
               {steps[activeStep].huerden?.map((huerdeId) => {
-                const challenge = huerden.find((h) => h.id === huerdeId); // Verknüpfe mit den Hürden
+                const challenge = huerden.find((h) => h.id === huerdeId);
                 return (
                   challenge && (
-                    <li key={challenge.id} className="relative">
-                      <span className="text-gray-700">{challenge.title}</span>
-                      <span
-                        className="text-sm text-indigo-500 hover:underline cursor-pointer ml-2"
-                        onClick={() => handleOpenModal(challenge)}
+                    <div key={challenge.id} className="border border-gray-200 rounded-lg shadow-sm">
+                      <h2>
+                        <button
+                          onClick={() => toggleAccordion(challenge.id)}
+                          className="flex justify-between items-center w-full px-4 py-4 bg-indigo-100 hover:bg-indigo-200 text-gray-700 font-medium rounded-t-lg transition"
+                        >
+                          <span className="text-indigo-700">{challenge.title}</span>
+                          <svg
+                            className={`w-5 h-5 transform ${
+                              openAccordion === challenge.id ? 'rotate-180' : 'rotate-0'
+                            } transition-transform text-indigo-700`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                      </h2>
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ${
+                          openAccordion === challenge.id ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+                        }`}
                       >
-                        Mehr erfahren
-                      </span>
-                    </li>
+                        <div className="p-5 bg-white rounded-b-lg">
+                          <p className="text-gray-600 mb-4">
+                            <span className="font-semibold text-gray-800">Beschreibung:</span>{' '}
+                            {challenge.description}
+                          </p>
+                          <p className="text-gray-600 mb-4">
+                            <span className="font-semibold text-gray-800">Lösung:</span>{' '}
+                            {challenge.solution}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            <span className="font-semibold text-gray-800">Verweis:</span>{' '}
+                            {challenge.solutionreference}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   )
                 );
               })}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Modal */}
-      {selectedChallenge && (
-        <Modal
-          isOpen={!!selectedChallenge}
-          onClose={handleCloseModal}
-          title={selectedChallenge.title}
-          description={selectedChallenge.description}
-          solution={selectedChallenge.solution}
-          reference={selectedChallenge.reference}
-          solutionreference={selectedChallenge.solutionreference}
-        />
-      )}
     </main>
   );
 }
