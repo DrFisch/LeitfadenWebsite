@@ -93,10 +93,15 @@ export default function SidebarTree() {
           <div>
             <h1 className="text-2xl font-bold">Einführung</h1>
             <p className="mt-4 text-gray-700">
-              Hier werden die technischen Hürden und Lösungsansätze aus der Studienarbeit aufgelistet. 
-              Die Kapitel stellen die Unterkapitel von Kapitel 6 (technische Hürden) und Kapitel 7 (Lösungsansätze) dar.
-              Zum Beispiel: Kapitel 2 entspricht den Inhalten aus Kapitel 6.2 und 7.2 der Studienarbeit.
-            </p>
+  Hier werden die technischen Hürden und Lösungsansätze aus der Studienarbeit dargestellt. 
+  Die Kapitel wurden bewusst nach ihrer ursprünglichen Nummerierung in der Studienarbeit benannt, 
+  um eine direkte Zuordnung zu erleichtern. 
+
+  Jedes Kapitel verweist dabei auf die jeweilige technische Hürde (Kapitel 6) 
+  und den zugehörigen Lösungsansatz (Kapitel 7). 
+  Zum Beispiel steht Kapitel <strong>6.2</strong> in dieser Übersicht für die technische Hürde <strong>6.2</strong> 
+  und den Lösungsansatz aus Kapitel <strong>7.2</strong>. 
+</p>
           </div>
         )}
 
