@@ -17,7 +17,7 @@ export default function GuideOverviewPage() {
         id: 'technische-huerden',
         title: 'Technische Hürden und Lösungsansätze',
         description: 'Hier werden die vielen technischen Schwierigkeiten einer Migration aufgezeigt und potenzielle Lösungsansätze genannt.',
-        href: '/migration-guide/huerden',
+        href: '/migration-guide/technische-huerden-theorie',
         icon: ClipboardDocumentIcon, // HandRaisedIcon
         green: true,
       },

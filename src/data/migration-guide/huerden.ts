@@ -5,6 +5,7 @@ export interface Challenge {
     solution: string;
     solutionreference: string;
     reference: string;
+    chapter?: number;
   }
   
   export const huerden: Challenge[] = [
@@ -16,6 +17,7 @@ export interface Challenge {
       solution: 'Zur Sicherstellung der Kompatibilität von Fachanwendungen unter Linux bietet sich der Einsatz von Emulationssoftware wie Wine oder Proton an. Diese Tools schaffen eine Kompatibilitätsschicht, die es ermöglicht, Windows-Anwendungen direkt unter Linux auszuführen. Sie sind besonders nützlich für Anwendungen, die keine tiefgreifende Integration in das Windows-Betriebssystem benötigen. Eine weitere Option ist der Einsatz von Virtualisierungstechnologien wie VirtualBox, KVM oder VMware. Hierbei wird ein vollständiges Windows-System in einer virtuellen Maschine betrieben, wodurch eine vollständige Kompatibilität mit der Anwendung und den Treibern gewährleistet bleibt. Allerdings ist zu beachten, dass Virtualisierung Ressourcen-intensiv ist und zusätzlich Verwaltungsaufwand erfordert. Langfristig sollte geprüft werden, ob die betroffenen Anwendungen durch plattformübergreifende Open-Source-Alternativen ersetzt werden können. Hierbei können Webanwendungen eine Lösung bieten, da sie plattformunabhängig sind und von jedem Betriebssystem genutzt werden können. Diese Maßnahmen sollten in Kombination mit umfangreichen Tests und einer schrittweisen Einführung umgesetzt werden, um den Arbeitsablauf nicht zu stören.',
       solutionreference: 'Kapitel 7.2.1 in der Studienarbeit',
       reference: 'Kapitel 6.2 in der Studienarbeit',
+      chapter: 2,
     },
     {
       id: 'huerde2',
@@ -24,6 +26,7 @@ export interface Challenge {
       solution: 'Für Anwendungen, die auf Windows-spezifische Schnittstellen und Bibliotheken angewiesen sind, können Containerlösungen oder Virtualisierung eine Lösung darstellen. Durch Containerisierung lassen sich Anwendungen isoliert betreiben, wodurch ihre Abhängigkeiten vollständig abgekapselt werden. Tools wie Docker oder Podman ermöglichen eine flexible und ressourcenschonende Implementierung. Eine alternative Lösung ist die Anpassung bestehender Anwendungen in Zusammenarbeit mit den Softwareherstellern oder durch interne Entwicklungsteams. In vielen Fällen kann die Software für plattformspezifische Bibliotheken neu entwickelt oder auf plattformübergreifende Technologien wie Java oder Web-Standards portiert werden. Diese Maßnahmen sind zwar mit einem höheren Entwicklungsaufwand verbunden, bieten jedoch eine nachhaltige und zukunftssichere Lösung. Für besonders kritische Anwendungen sollte eine detaillierte Analyse der Abhängigkeiten erfolgen, um festzustellen, welche Schnittstellen durch Open-Source-Alternativen ersetzt werden können.',
       solutionreference: 'Kapitel 7.2.2 in der Studienarbeit',
       reference: 'Kapitel 6.2 in der Studienarbeit',
+      chapter: 2,
     },
     {
       id: 'huerde3',
@@ -32,6 +35,7 @@ export interface Challenge {
       solution: 'Um Drittanbieter-Software, die nicht für Linux zertifiziert ist, in die IT-Infrastruktur zu integrieren, sollte eine enge Zusammenarbeit mit den Softwareherstellern angestrebt werden. In Verhandlungen können langfristige Entwicklungsziele festgelegt werden, um die plattformübergreifende Unterstützung zu gewährleisten. Insbesondere bei Behörden könnte ein gemeinsames Vorgehen (z.B. durch Kooperationen mit anderen Verwaltungen) den Druck auf die Hersteller erhöhen.Alternativ bietet sich der Einsatz von Virtualisierung an, um die Software in einem Windows-Gastsystem zu betreiben. Diese Methode gewährleistet vollständige Kompatibilität, ist jedoch ressourcenintensiv.Eine weitere Option ist die Webbasierung der Software: Wenn Drittanbieter ihre Software in Form von Webanwendungen anbieten, sind diese unabhängig vom Betriebssystem und können einfach in die bestehende Infrastruktur integriert werden.Für Anbieter, die keine Anpassungen anbieten, sollten Alternativen evaluiert werden, die ähnliche Funktionalitäten bieten und bereits Linux-Unterstützung gewährleisten.',
       solutionreference: 'Kapitel 7.2.3 in der Studienarbeit',
       reference: 'Kapitel 6.2 in der Studienarbeit',
+      chapter: 2,
     },
     {
       id: 'huerde4',
@@ -40,6 +44,7 @@ export interface Challenge {
       solution: 'Die Sicherstellung der Datenintegrität erfordert eine umfassende Datenanalyse vor der Migration. Vorhandene Verknüpfungen zwischen Anwendungen und Datenbanken müssen geprüft und gegebenenfalls angepasst werden. Hierbei sind automatisierte Tools zur Datenmigration hilfreich, die die Konsistenz der Daten während des Übertragungsprozesses sicherstellen.Zudem sind Backups vor der Migration unerlässlich, um im Fehlerfall auf die ursprünglichen Daten zurückgreifen zu können. Um Inkonsistenzen zu vermeiden, sollte der Migrationsprozess schrittweise erfolgen und durch umfangreiche Tests und Validierungen begleitet werden.Falls Anpassungen an Schnittstellen notwendig sind, sollte die interne IT-Abteilung in Zusammenarbeit mit den Entwicklern prüfen, ob neue Schnittstellen geschaffen oder bestehende angepasst werden können. Dies stellt sicher, dass alle Systeme reibungslos miteinander kommunizieren.',
       solutionreference: 'Kapitel 7.2.2 in der Studienarbeit',
       reference: 'Kapitel 6.2 in der Studienarbeit',
+      chapter: 2,
     },
     {
       id: 'huerde5',
@@ -48,6 +53,7 @@ export interface Challenge {
       solution: 'Fehlende Unterstützung durch Softwarehersteller kann durch Verhandlungen und Zusammenarbeit mit den Anbietern adressiert werden. Behörden können durch gemeinsame Initiativen den Druck auf Hersteller erhöhen, ihre Software auch für Linux zu zertifizieren. Ein längerfristiger Migrationsplan bietet Entwicklern die Möglichkeit, ihre Produkte plattformübergreifend anzupassen. Falls die Bereitschaft der Anbieter fehlt, sollten Open-Source-Alternativen evaluiert werden, die eine vergleichbare Funktionalität bieten. Hierbei spielen auch die Vorteile wie digitale Souveränität und die Vermeidung langfristiger Abhängigkeiten von proprietären Anbietern eine Rolle. Eine weitere Möglichkeit besteht darin, bestehende Softwarelösungen durch Containerisierung oder Virtualisierung lauffähig zu halten, während schrittweise eine nachhaltige Alternative entwickelt wird. In Kombination mit einer Marktanalyse lassen sich langfristige Alternativen identifizieren, die den technischen Anforderungen gerecht werden.',
       solutionreference: 'Kapitel 7.2.3 in der Studienarbeit',
       reference: 'Kapitel 6.2 in der Studienarbeit',
+      chapter: 2,
     },
     // 6.3
     {
@@ -59,6 +65,7 @@ export interface Challenge {
         'Um die Integration effizient zu gestalten, sollte eine umfassende Bestandsaufnahme der IT-Infrastruktur durchgeführt werden. Auf Basis dieser Analyse können gezielte Maßnahmen zur Anpassung und Harmonisierung der Systeme abgeleitet werden. Plattformübergreifende Tools wie FreeIPA oder OpenLDAP bieten eine langfristige Alternative zur zentralen Benutzer- und Rechteverwaltung. Zudem sind Schulungen des IT-Personals erforderlich, um die neuen Konzepte zu implementieren und zu managen.',
       solutionreference: 'Kapitel 7.3.1 und 7.3.4 in der Studienarbeit',
       reference: 'Kapitel 6.3 und 6.3.4 in der Studienarbeit',
+      chapter: 3,
     },
     {
       id: 'huerde7',
@@ -69,6 +76,7 @@ export interface Challenge {
         'Zur Integration von Linux in bestehende Active Directory-Umgebungen können Tools wie SSSD oder Samba eingesetzt werden. Diese ermöglichen eine nahtlose Einbindung von Linux-Systemen in AD-Domänen. Alternativ können plattformunabhängige Lösungen wie FreeIPA oder OpenLDAP eingeführt werden, um langfristig unabhängige und flexible Benutzerverwaltungssysteme zu etablieren.',
       solutionreference: 'Kapitel 7.3.1 in der Studienarbeit',
       reference: 'Kapitel 6.3.1 in der Studienarbeit',
+      chapter: 3,
     },
     {
       id: 'huerde9',
@@ -79,6 +87,7 @@ export interface Challenge {
         'Sicherheitssysteme müssen an die neuen Linux-Umgebungen angepasst werden, wobei Open-Source-Lösungen wie Firewalls und Intrusion Detection Systeme eingesetzt werden können. Zusätzlich müssen Sicherheitsrichtlinien wie ISO 27001 und DSGVO eingehalten werden. Regelmäßige Sicherheitsaudits sowie Schulungen des IT-Personals helfen, potenzielle Schwachstellen frühzeitig zu erkennen und zu beheben.',
       solutionreference: 'Kapitel 7.3.1 und 7.3.4 in der Studienarbeit',
       reference: 'Kapitel 6.3.1 in der Studienarbeit',
+      chapter: 3,
     },
     {
       id: 'huerde10',
@@ -89,6 +98,7 @@ export interface Challenge {
         'Open-Source-Treiber wie CUPS (Common Unix Printing System) können zur Druckerverwaltung genutzt werden. Eine detaillierte Bestandsaufnahme der vorhandenen Hardware sollte frühzeitig durchgeführt werden, um inkompatible Geräte zu identifizieren und ggf. durch kompatible Hardware zu ersetzen. Kooperationen mit Herstellern können helfen, die Verfügbarkeit von Linux-Treibern sicherzustellen.',
       solutionreference: 'Kapitel 7.3.2 in der Studienarbeit',
       reference: 'Kapitel 6.3.2 in der Studienarbeit',
+      chapter: 3,
     }
     ,
     {
@@ -100,6 +110,7 @@ export interface Challenge {
 ,
 solutionreference: 'Kapitel 7.3.3 in der Studienarbeit',
       reference: 'Kapitel 6.3.3 in der Studienarbeit',
+      chapter: 3,
     },
     {
       id: 'huerde13',
@@ -110,6 +121,7 @@ solutionreference: 'Kapitel 7.3.3 in der Studienarbeit',
 ,
 solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
       reference: 'Kapitel 6.3.3 in der Studienarbeit',
+      chapter: 3,
     }
 ,    
 {
@@ -121,6 +133,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
 ,
 solutionreference: 'Kapitel 7.3.1 und 7.3.4 in der Studienarbeit',
   reference: 'Kapitel 6.3.1 und 6.3.3 in der Studienarbeit',
+  chapter: 3,
 }
 ,
     
@@ -133,6 +146,7 @@ solutionreference: 'Kapitel 7.3.1 und 7.3.4 in der Studienarbeit',
 ,
 solutionreference: 'Kapitel 7.3.4 in der Studienarbeit',
       reference: 'Kapitel 6.3.4 in der Studienarbeit',
+      chapter: 3,
     },
     {
       id: 'huerde17',
@@ -143,6 +157,7 @@ solutionreference: 'Kapitel 7.3.4 in der Studienarbeit',
 ,
 solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
       reference: 'Kapitel 6.3.4 in der Studienarbeit',
+      chapter: 3,
     },
     // 6.4
     {
@@ -154,6 +169,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.4.1 und 7.4.3 in der Studienarbeit',
         
       reference: 'Kapitel 6.4 in der Studienarbeit',
+      chapter: 4,
     },
     {
       id: 'huerde19',
@@ -164,6 +180,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.4.1, 7.4.2 und 7.4.3 in der Studienarbeit',
         
       reference: 'Kapitel 6.4 in der Studienarbeit',
+      chapter: 4,
     },
     // 6.5
     {
@@ -175,6 +192,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.5.1, 7.5.2 und 7.5.5 in der Studienarbeit',
         
       reference: 'Kapitel 6.5 in der Studienarbeit',
+      chapter: 5,
     },
     {
       id: 'huerde21',
@@ -185,6 +203,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.5.3 und 7.5.4 in der Studienarbeit',
         
       reference: 'Kapitel 6.5 in der Studienarbeit',
+      chapter: 5,
     },
     {
       id: 'huerde22',
@@ -195,6 +214,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.5.4 und 7.5.5 in der Studienarbeit',
         
       reference: 'Kapitel 6.5 in der Studienarbeit',
+      chapter: 5,
     },
     // 6.6
     {
@@ -206,6 +226,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.6.1 in der Studienarbeit',
         
       reference: 'Kapitel 6.6.1 in der Studienarbeit',
+      chapter: 6,
     },
     {
       id: 'huerde26',
@@ -216,6 +237,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.6.1 und 7.6.2 in der Studienarbeit',
         
       reference: 'Kapitel 6.6.1 und 6.6.2 in der Studienarbeit',
+      chapter: 6,
     },
     {
       id: 'huerde28',
@@ -226,6 +248,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.6.2 in der Studienarbeit',
         
       reference: 'Kapitel 6.6.2 in der Studienarbeit',
+      chapter: 6,
     },
     {
       id: 'huerde30',
@@ -236,6 +259,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.6.2 in der Studienarbeit',
         
       reference: 'Kapitel 6.6.2 in der Studienarbeit',
+      chapter: 6,
     },
     // 6.7
     {
@@ -247,6 +271,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.7.1 und 7.7.3 in der Studienarbeit',
         
       reference: 'Kapitel 6.7 in der Studienarbeit',
+      chapter: 7,
     },
     {
       id: 'huerde32',
@@ -257,6 +282,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.7.2 in der Studienarbeit',
         
       reference: 'Kapitel 6.7 in der Studienarbeit',
+      chapter: 7,
     },
     // 6.8
     {
@@ -268,6 +294,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.8.2 in der Studienarbeit',
         
       reference: 'Kapitel 6.5 in der Studienarbeit',
+      chapter: 8,
     },
     {
       id: 'huerde34',
@@ -278,5 +305,6 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solutionreference: 'Kapitel 7.8.1 in der Studienarbeit',
         
       reference: 'Kapitel 6.5 in der Studienarbeit',
+      chapter: 8,
     },
   ];
