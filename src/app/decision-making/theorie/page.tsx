@@ -65,13 +65,26 @@ export default function TheoryPage() {
         {/* Inhalte anzeigen */}
         {activeSubSection ? (
           theorySections
-            .flatMap((section) => section.subSections)
-            .filter((subSection) => subSection.id === activeSubSection)
-            .map((subSection) => (
+            .flatMap((section) => section.subSections.map((subSection) => ({ ...subSection, section })))
+            .filter((item) => item.id === activeSubSection)
+            .map(({ section, ...subSection }) => (
               <div key={subSection.id}>
-                <h1 className="text-2xl font-bold mb-4">{subSection.title}</h1>
+                {/* General Info */}
+                <div className="bg-white p-4 rounded-lg shadow-md mb-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{section.title}</h3>
+                  
+                  <p className="text-gray-700">{section.generalInfo}</p>
+                </div>
 
-                {/* Inhalte als Tabelle */}
+                {/* General Explanation */}
+                
+
+                {/* Subsection Content */}
+                <h2 className="text-2xl font-bold mb-4">{subSection.title}</h2>
+                <div className="bg-gray-100 p-4 rounded-lg shadow-sm mb-4">
+                  <h4 className="text-md font-semibold text-gray-800 mb-2">Allgemeine Erklärung</h4>
+                  <p className="text-gray-600">{subSection.generalExplanation}</p>
+                </div>
                 <table className="table-auto w-full text-left text-gray-700 border-collapse mb-6">
                   <thead>
                     <tr className="bg-gray-100">
@@ -121,7 +134,9 @@ export default function TheoryPage() {
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Willkommen!</h1>
             <p className="mt-4 text-gray-600">
-              Wähle eine Theorie-Kategorie und eine Untersektion aus der Sidebar, um Details anzuzeigen.
+              Diese Seite bietet einen theoretischen Überblick über die Rahmenbedingungen, die vorherrschen sollten, damit eine Migration zu Linux für eine Behörde sinnvoll ist. 
+              Neben den dargestellten theoretischen Grundlagen finden Sie auf dieser Website auch einen Fragebogen, der dabei hilft, zu bestimmen, ob sich eine Migration zu Linux für Ihre Behörde anbietet. 
+              Der Fragebogen berücksichtigt technische, organisatorische und wirtschaftliche Faktoren, um eine fundierte Entscheidung zu ermöglichen.
             </p>
           </div>
         )}
