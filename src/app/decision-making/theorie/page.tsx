@@ -71,7 +71,8 @@ export default function TheoryPage() {
               <div key={subSection.id}>
                 {/* General Info */}
                 <div className="bg-white p-4 rounded-lg shadow-md mb-6">
-                  <h1 className="text-lg font-bold text-gray-900 mb-2">{section.title}</h1>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{section.title}</h3>
+                  
                   <p className="text-gray-700">{section.generalInfo}</p>
                 </div>
 
