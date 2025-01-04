@@ -99,8 +99,8 @@ export default function SidebarTree() {
 
   Jedes Kapitel verweist dabei auf die jeweilige technische Hürde (Kapitel 6) 
   und den zugehörigen Lösungsansatz (Kapitel 7). 
-  Zum Beispiel steht Kapitel <strong>6.2</strong> in dieser Übersicht für die technische Hürde <strong>6.2</strong> 
-  und den Lösungsansatz aus Kapitel <strong>7.2</strong>. 
+  Zum Beispiel steht Kapitel <strong>6.2</strong> in dieser Übersicht für die technische Hürde <strong>6.2 </strong>  
+   und den Lösungsansatz aus Kapitel <strong>7.2</strong>. 
 </p>
           </div>
         )}

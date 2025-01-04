@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Entscheidungsfindung', href: '/decision-making' },
   { name: 'Migration Guide', href: '/migration-guide' },
   //{ name: 'Wiki', href: '/wiki' },
+  { name: 'Ausblick', href: '/future-features' },
   { name: 'Über', href: '/about' },
 ];
 
