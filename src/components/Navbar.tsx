@@ -9,7 +9,7 @@ import Link from 'next/link'; // Importiere Link aus next/link
 const navigation = [
   { name: 'Entscheidungsfindung', href: '/decision-making' },
   { name: 'Migration Guide', href: '/migration-guide' },
-  { name: 'Wiki', href: '/wiki' },
+  //{ name: 'Wiki', href: '/wiki' },
   { name: 'Über', href: '/about' },
 ];
 
