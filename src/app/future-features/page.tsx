@@ -5,7 +5,7 @@ export default function FutureFeatures() {
     <section className="min-h-[82vh] container mx-auto py-12">
         <h2 className="text-3xl font-bold text-center mb-6">Ausblick auf zukünftige Funktionen</h2>
       <p className="text-gray-700 text-center mb-10">
-        Diese Seite ist ein Prototyp, der Module für die Entscheidungsfindung zur Migration auf Linux und eine Schritt für Schritt Anöleitung zur Migration auf Linux bietet. In einer
+        Diese Seite ist ein Prototyp, der Module für die Entscheidungsfindung zur Migration auf Linux und eine Schritt-für-Schritt Anleitung zur Migration auf Linux bietet. In einer
         zukünftigen Version könnten die folgenden Features integriert werden, um die Funktionalitäten zu erweitern.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

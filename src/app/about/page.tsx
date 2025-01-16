@@ -26,13 +26,13 @@ export default function AboutPage() {
         <div className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-700 mb-2">Zweck der Website</h2>
           <p className="text-gray-600">
-            Diese Website soll Behörden dabei helfen, eine tscheidung darüber zu treffen, ob eine Migration auf Linux möglich ist, und liefert eine klare Anleitung für die Umsetzung der Migration.
+            Diese Website soll Behörden dabei helfen, eine Entscheidung darüber zu treffen, ob eine Migration auf Linux möglich ist, und liefert eine klare Anleitung für die Umsetzung der Migration.
           </p>
         </div>
 
         <div className="mb-6">
           <p className="text-gray-600">
-            Diese Webseite besteht aus dem Leitfaden zur Migration und dem Modul zur Entscheidungsfindung. Die Inhalte wurden auf Basis des theoretischen Wissens erstellt, welche im schriftlichen Teil der Arbeit ausgearbeitet wurden. Ziel war es, eine praktische Anwendung für die Theorie zu finden und einen direkten Nutzen für Behörden zu schaffen.
+            Diese Webseite besteht aus dem Leitfaden zur Migration und dem Modul zur Entscheidungsfindung. Die Inhalte wurden auf Basis des theoretischen Wissens erstellt, welches im schriftlichen Teil der Arbeit ausgearbeitet wurden. Ziel war es, eine praktische Anwendung für die Theorie zu finden und einen direkten Nutzen für Behörden zu schaffen.
           </p>
         </div>
 

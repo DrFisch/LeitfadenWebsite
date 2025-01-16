@@ -293,7 +293,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solution: 'Die Migration von Exchange-Servern kann entweder schrittweise oder vollständig durch Open-Source-Mailserver wie Postfix, Dovecot oder Zimbra erfolgen. Ein schrittweiser Hybrid-Ansatz erlaubt es, Exchange-Server beizubehalten und sukzessive durch Open-Source-Lösungen zu ersetzen, um Risiken zu minimieren. Datenmigrationstools wie "imapsync" oder "OfflineIMAP" erleichtern die Übertragung von E-Mails, während Plattformen wie Nextcloud oder SOGo Funktionen für Kalender und Kontaktverwaltung bereitstellen. Für heterogene Umgebungen sorgen Tools wie OpenChange oder DAVx5 für eine konsistente Synchronisation. Alternativ können Exchange-Server weiterhin über Linux-Clients wie Thunderbird (mit ExQuilla oder Evolution) oder durch Webzugriff genutzt werden. Eine sorgfältige Planung und Schulung der Mitarbeitenden sind entscheidend, um eine reibungslose Integration zu gewährleisten.',
         solutionreference: 'Kapitel 7.8.2 in der Studienarbeit',
         
-      reference: 'Kapitel 6.5 in der Studienarbeit',
+      reference: 'Kapitel 6.8 in der Studienarbeit',
       chapter: 8,
     },
     {
@@ -304,7 +304,7 @@ solutionreference: 'Kapitel 7.3.3 und 7.3.4 in der Studienarbeit',
         solution: 'Die Umstellung auf Open-Source-Office-Alternativen wie LibreOffice oder OpenOffice erfordert den Einsatz von Konvertierungstools, um bestehende Microsoft-Office-Datenbestände automatisiert in offene Formate wie ODF umzuwandeln. Pilotprojekte in ausgewählten Abteilungen helfen, Probleme frühzeitig zu identifizieren und Anpassungen vorzunehmen. Mitarbeiterschulungen, die den gezielten Umgang mit den neuen Programmen sowie die Unterschiede zu den bisherigen Lösungen vermitteln, sind essenziell für eine erfolgreiche Einführung. Regelmäßige Tests der konvertierten Dokumente gewährleisten die Qualität und Konsistenz der Daten. Durch enge Zusammenarbeit mit den Fachabteilungen kann sichergestellt werden, dass die neuen Tools den individuellen Anforderungen gerecht werden und nahtlos in die Arbeitsprozesse integriert werden.',
         solutionreference: 'Kapitel 7.8.1 in der Studienarbeit',
         
-      reference: 'Kapitel 6.5 in der Studienarbeit',
+      reference: 'Kapitel 6.8 in der Studienarbeit',
       chapter: 8,
     },
   ];

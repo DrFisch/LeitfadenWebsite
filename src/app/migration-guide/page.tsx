@@ -40,7 +40,7 @@ export default function GuideOverviewPage() {
     list: [
       
       'Technische Hürden und Lösungsansätze: Erklärung der möglichen Hürden und Lösungsansätze',
-      'Schritte zur Migration: Schritt-für-Schritt Anleitung zur Migrationa uf Linux',
+      'Schritte zur Migration: Schritt-für-Schritt Anleitung zur Migration auf Linux',
     ],
     footer: 'Wählen Sie links ein Modul aus, um fortzufahren.',
   };
