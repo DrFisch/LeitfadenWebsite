@@ -9,7 +9,7 @@ export default function FutureFeatures() {
         zukünftigen Version könnten die folgenden Features integriert werden, um die Funktionalitäten zu erweitern.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Bewertung und Evaluation */}
+        
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:bg-yellow-100">
           <ChartBarIcon className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
           <h3 className="text-xl font-bold mb-2">Bewertung und Evaluation</h3>
@@ -18,7 +18,7 @@ export default function FutureFeatures() {
           </p>
         </div>
 
-        {/* Risikoanalyse */}
+       
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:bg-red-100">
           <ShieldExclamationIcon className="h-12 w-12 text-red-500 mx-auto mb-4" />
           <h3 className="text-xl font-bold mb-2">Risikoanalyse</h3>
@@ -27,7 +27,7 @@ export default function FutureFeatures() {
           </p>
         </div>
 
-        {/* Wiki */}
+       
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:bg-green-100">
           <AcademicCapIcon className="h-12 w-12 text-green-500 mx-auto mb-4" />
           <h3 className="text-xl font-bold mb-2">Wiki</h3>
@@ -36,7 +36,7 @@ export default function FutureFeatures() {
           </p>
         </div>
 
-        {/* Anpassung der mobilen Ansicht */}
+        
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:bg-blue-100">
           <DevicePhoneMobileIcon className="h-12 w-12 text-blue-500 mx-auto mb-4" />
           <h3 className="text-xl font-bold mb-2">Anpassung der mobilen Ansicht</h3>

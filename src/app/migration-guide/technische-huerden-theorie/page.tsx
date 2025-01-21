@@ -6,9 +6,9 @@ import { huerden } from "@/data/migration-guide/huerden";
 export default function SidebarTree() {
   const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
   const [selectedHuerde, setSelectedHuerde] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<string | null>("intro"); // "intro" als Standard für die Einführung
+  const [activeTab, setActiveTab] = useState<string | null>("intro"); 
 
-  // Kapitel mit Beschreibungen
+  
   const chapters = [
     { number: 2, description: "Software-Kompatibilität" },
     { number: 3, description: "Integration in Infrastruktur" },
@@ -28,7 +28,7 @@ export default function SidebarTree() {
 
   return (
     <div className="flex h-screen bg-gray-50">
-      {/* Sidebar */}
+      
       <div className="w-1/4 bg-white shadow-lg border-r border-gray-200 p-4 overflow-y-auto">
         <h2 className="text-xl font-semibold mb-6">Kapitelübersicht</h2>
 
@@ -55,7 +55,7 @@ export default function SidebarTree() {
             <button
               onClick={() => {
                 toggleChapter(chapter.number);
-                setActiveTab(null); // Einführung deaktivieren
+                setActiveTab(null); 
               }}
               className={`w-full flex items-center justify-between px-4 py-2 text-base font-bold ${
                 expandedChapter === chapter.number ? "bg-blue-100 text-blue-600" : "text-gray-700 hover:bg-gray-100"
@@ -98,7 +98,7 @@ export default function SidebarTree() {
 
       {/* Content Bereich */}
       <div className="w-3/4 p-8">
-        {/* Einführung anzeigen */}
+        
         {activeTab === "intro" && (
           <div>
             <h1 className="text-2xl font-bold">Einführung</h1>
@@ -115,7 +115,7 @@ export default function SidebarTree() {
           </div>
         )}
 
-        {/* Hürden anzeigen */}
+       
         {!activeTab && selectedHuerdeDetails && (
           <div>
             <h1 className="text-2xl font-bold">{selectedHuerdeDetails.title}</h1>
@@ -127,7 +127,7 @@ export default function SidebarTree() {
           </div>
         )}
 
-        {/* Begrüßung anzeigen, wenn nichts ausgewählt */}
+        
         {!activeTab && !selectedHuerdeDetails && (
           <div>
             <h1 className="text-2xl font-bold text-gray-800">Willkommen!</h1>

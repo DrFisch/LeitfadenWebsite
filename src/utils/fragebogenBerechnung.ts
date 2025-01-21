@@ -1,11 +1,11 @@
 import { GeneralQuestion, SpecificQuestion } from '@/components/decision-making/fragebogen/TableFragebogen';
 
 interface GeneralAnswers {
-  [key: string]: string; // Antwort-ID -> Antwort-Wert ('voll', 'zu', etc.)
+  [key: string]: string; 
 }
 
 interface SpecificAnswers {
-  [key: string]: string[] | string; // Antwort-ID -> Antwort-Wert(e)
+  [key: string]: string[] | string; 
 }
 
 export function berechneScore(

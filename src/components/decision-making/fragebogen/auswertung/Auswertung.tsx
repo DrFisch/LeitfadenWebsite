@@ -22,7 +22,7 @@ const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers
   let erreichtePunkte = 0;
   let möglichePunkte = 0;
 
-  // Berechnung der allgemeinen Fragen
+  // brechnung allgemeinen Fragen
   Object.entries(generalAnswers).forEach(([id, answer]) => {
     const question = generalQuestions.find((q) => q.id === id);
     if (!question || answer === 'keine-antwort') return;
@@ -41,7 +41,7 @@ const Auswertung: React.FC<AuswertungProps> = ({ generalAnswers, specificAnswers
     erreichtePunkte += answerPoints[answer as keyof typeof answerPoints] || 0;
   });
 
-  // Berechnung der spezifischen Fragen
+  // berechnung der spezifischen Fragen
   specificQuestions.forEach((q) => {
     const weight = specificAnswers[q.id];
     if (weight) {

@@ -21,7 +21,7 @@ export default function AuswertungPage() {
       const formattedSpecificAnswers: { [key: string]: string } = Object.keys(parsedSpecificAnswers).reduce(
         (acc, key) => {
           acc[key] = Array.isArray(parsedSpecificAnswers[key])
-            ? parsedSpecificAnswers[key].join(', ') // Konvertiere string[] zu string
+            ? parsedSpecificAnswers[key].join(', ') // konvertier estring[] zu string
             : parsedSpecificAnswers[key];
           return acc;
         },

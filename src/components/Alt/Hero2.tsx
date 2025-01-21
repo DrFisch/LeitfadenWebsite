@@ -23,7 +23,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        {/* Background Decoration */}
+        {/* Background  */}
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 transform-gpu blur-3xl"

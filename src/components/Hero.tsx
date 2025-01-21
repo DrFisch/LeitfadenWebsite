@@ -5,9 +5,9 @@ interface HeroProps {
   description: string;
   backgroundImage: string;
   buttons: { text: string; href: string; style: string }[];
-  overlayOpacity?: number; // Opazität für das Blurry Overlay
-  boxOpacity?: number; // Opazität für die Blurry Box
-  small?: boolean; // Neue Prop für kleinere Hero-Section
+  overlayOpacity?: number; 
+  boxOpacity?: number; 
+  small?: boolean; 
 }
 
 export default function Hero({
@@ -15,9 +15,9 @@ export default function Hero({
   description,
   backgroundImage,
   buttons,
-  overlayOpacity = 1, // Standardwert für Overlay-Opazität
-  boxOpacity = 4, // Standardwert für Box-Opazität
-  small = false, // Standardwert: Nicht klein
+  overlayOpacity = 1, 
+  boxOpacity = 4, 
+  small = false, 
 }: HeroProps) {
   return (
     <section
@@ -41,7 +41,7 @@ export default function Hero({
         <div
           className={`relative z-10 rounded-lg ${
             small ? 'p-8' : 'p-8'
-          } ${boxOpacity > 0 ? 'backdrop-blur-sm' : ''}`} // Dynamische Padding
+          } ${boxOpacity > 0 ? 'backdrop-blur-sm' : ''}`} 
           style={
             boxOpacity > 0
               ? { backgroundColor: `rgba(255, 255, 255, ${boxOpacity / 1000})` }
@@ -51,7 +51,7 @@ export default function Hero({
           <h1
             className={`${
               small ? 'text-3xl' : 'text-5xl'
-            } font-bold mb-6 drop-shadow-lg`} // Dynamische Schriftgröße
+            } font-bold mb-6 drop-shadow-lg`} 
           >
             {title}
           </h1>
@@ -76,7 +76,7 @@ export default function Hero({
         </div>
       </div>
 
-      {/* Background Decoration */}
+      
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 transform-gpu blur-3xl"

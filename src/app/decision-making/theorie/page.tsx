@@ -9,7 +9,7 @@ export default function TheoryPage() {
 
   const toggleTab = (tabId: string) => {
     setExpandedTab(expandedTab === tabId ? null : tabId);
-    setActiveSubSection(null); // Reset active subsection
+    setActiveSubSection(null); 
   };
 
   return (
@@ -76,7 +76,7 @@ export default function TheoryPage() {
                   <p className="text-gray-700">{section.generalInfo}</p>
                 </div>
 
-                {/* General Explanation */}
+                
                 
 
                 {/* Subsection Content */}

@@ -47,7 +47,7 @@ export default function MigrationGuide() {
           ))}
         </div>
 
-        {/* Inhalt */}
+        
         <div className="bg-white rounded-lg shadow-md p-6 relative">
           <h2 className="text-2xl font-bold text-indigo-600 mb-4 border-b-2 border-gray-500">{steps[activeStep].title}</h2>
           <p className="text-gray-700 mb-6">{steps[activeStep].description}</p>
@@ -59,7 +59,7 @@ export default function MigrationGuide() {
             ))}
           </ul>
 
-          {/* Technische Herausforderungen - Accordion */}
+          
           <div className="mt-6">
           <h3 className="text-xl font-bold mb-4 text-gray-800 border-b-2 border-gray-400  pt-4">
           Technische Herausforderungen</h3>

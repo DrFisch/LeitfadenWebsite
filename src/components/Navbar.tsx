@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link'; // Importiere Link aus next/link
+import Link from 'next/link'; 
 
 const navigation = [
   { name: 'Entscheidungsfindung', href: '/decision-making' },
@@ -16,7 +16,7 @@ const navigation = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pathname = usePathname(); // Aktueller Pfad
+  const pathname = usePathname(); 
 
   return (
     <nav className="bg-gradient-to-r from-sky-500 to-blue-900 shadow-md">
@@ -25,10 +25,10 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/">
             <Image
-              src="/haw2.png" // Pfad zum Logo
+              src="/haw2.png" 
               alt="Logo"
-              width={100} // Breite des Logos
-              height={100} // Höhe des Logos
+              width={100} 
+              height={100} 
               className="rounded-full"
             />
           </Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="hidden lg:flex gap-x-6">
         {navigation.map((item) => {
-          const isActive = pathname.startsWith(item.href); // Prüft, ob der aktuelle Pfad mit dem href startet
+          const isActive = pathname.startsWith(item.href); 
           return (
             <Link
               key={item.name}
